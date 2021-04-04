@@ -1,0 +1,12 @@
+[package]
+name = "douki"
+version = "0.1.0"
+authors = ["alkam"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+cynic = { version = "0.13.0", features = ["surf"] }
+surf = "2.0.0"
