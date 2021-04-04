@@ -1,15 +1,13 @@
 mod API;
-use crate::API::queries::{MyQueryArguments};
+use crate::API::queries::MyQueryArguments;
 
-use tokio;
-use cynic::{http::SurfExt, QueryBuilder};
 use cynic;
-
-
+use cynic::{http::SurfExt, QueryBuilder};
+use tokio;
 
 #[tokio::main]
 async fn main() {
-    let query = API::queries::MyQuery::build(MyQueryArguments {id: 701603});
+    let query = API::queries::MyQuery::build(MyQueryArguments { id: 701603 });
 
     let response = surf::post("https://graphql.anilist.co/")
         .run_graphql(query)

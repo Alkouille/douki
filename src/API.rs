@@ -1,8 +1,4 @@
-
-#[cynic::schema_for_derives(
-file = r#"schema.graphql"#,
-module = "schema",
-)]
+#[cynic::schema_for_derives(file = r#"schema.graphql"#, module = "schema")]
 pub mod queries {
     use super::schema;
 
@@ -21,7 +17,6 @@ pub mod queries {
     #[derive(cynic::QueryFragment, Debug)]
     pub struct MediaListCollection {
         pub lists: Option<Vec<Option<MediaListGroup>>>,
-
     }
 
     #[derive(cynic::QueryFragment, Debug)]
@@ -67,6 +62,6 @@ pub mod queries {
     }
 }
 
-    mod schema {
-        cynic::use_schema!(r#"schema.graphql"#);
-    }
+mod schema {
+    cynic::use_schema!(r#"schema.graphql"#);
+}
