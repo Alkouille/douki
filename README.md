@@ -10,25 +10,35 @@
 
 ## <a name='Aboutdoki'></a>About doki
 
-Douki-next (同期『ネクスト』) is a sync software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net) account. The purpose of douki is to merge your anilist to your animelist ((or vice-versa) precisely , with only certains fields or excluding some, only certain anime or manga, while keeping thing simple and supporting merge in one command.
+Douki-next (同期『ネクスト』) is a synchronization software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net) account. The purpose of douki is to merge your anilist to your animelist (or vice-versa) precisely, with only certains fields or excluding some, only certain anime or manga, while keeping things simple and supporting sync in one command.
 
+This project is still in its early stage of development —in fact, almost nothing works! So be careful experimenting with this program. Hopefully one day when some release will pop in the github release section, it will definitely be safe.
 
 ## <a name='Whydoiki'></a> Why doki
 
-We believe that there are no equivalent to precisely synchronize anilist and myanimelist. With doki you can by simply running a command sync your accounts or more precisely sync only some field.
+- Meant for everyone, easy to use, yet sufficiently versatile to process complex sync.
+- Available [everywhere Rust can compile on Windows](https://doc.rust-lang.org/rustc/platform-support.html), prebuilt are proposed in the release section for Windows, Linux and MacOS
+- Douki is meant to be *safe*. Using Douki you could cancel changes at any time while the program is still runing, errors are human so you should be able to cancel yours.
 
 
 # <a name='Roadmap'></a> Roadmap
 
 - Core
     - [x] Retrieve Anilist's list
-    - [] Retrieve MAL's list
-    - [] Mutate Anilist's list
-    - [] Mutate MAL's list
-    - [] Choosing field
-    - [] Mutate only if not already the same
+    - [ ] Retrieve MAL's list
+    - [ ] Mutate Anilist's list
+    - [ ] Mutate MAL's list
+    - [ ] Safe mutate (i.e. possibility to cancel anything while the program is still runing)
+    - [ ] Choosing field
+    - [ ] Mutate only if not already the same
+- Advanced
+    - [ ] favourite support (characters, animes, manga)
 
 
 ## <a name='Referencesinspirations'></a>References, inspirations
 
 * Idea inspired by the late project also named [douki](https://github.com/gilmoreg/douki)
+
+Please take a look at similar projects!
+    * [Taiga](https://taiga.moe) can update your Anilist and Myanimelist while watching anime with their app
+    * [Malsync](https://malsync.moe) can update your Anilist, myanimelist, and others while watching anime on supported website.
