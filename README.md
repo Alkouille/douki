@@ -40,5 +40,5 @@ This project is still in its early stage of development —in fact, almost nothi
 
 Please take a look at similar projects!
 
-* [Taiga](https://taiga.moe) can update your Anilist and myanimelist while watching anime with their app
-* [Malsync](https://malsync.moe) can update your Anilist, myanimelist, and others while watching anime on their supported website.
+- [Taiga](https://taiga.moe) can update your Anilist and myanimelist while watching anime with their app
+- [Malsync](https://malsync.moe) can update your Anilist, myanimelist, and others while watching anime on their supported website.
