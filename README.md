@@ -10,15 +10,14 @@
 
 ## <a name='Aboutdoki'></a>About doki
 
-Douki-next (同期『ネクスト』) is a synchronization software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net) account. The purpose of douki is to merge your anilist to your animelist (or vice-versa) precisely, with only certains fields or excluding some, only certain anime or manga, while keeping things simple and supporting sync in one command.
-
-This project is still in its early stage of development —in fact, almost nothing works! So be careful experimenting with this program. Hopefully one day when some release will pop in the github release section, it will definitely be safe.
+Douki-next (同期『ネクスト』) is a synchronization software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net). The purpose of douki is to help you updating at the same time your anilist and myanimelist with precision.
+This project is still in its early stage of development —in fact, almost nothing works! So be careful experimenting with this program. Hopefully one day when some release will pop in the github release section, it will definitely be safe though.
 
 ## <a name='Whydoiki'></a> Why doki
 
 - Meant for everyone, easy to use, yet sufficiently versatile to process complex sync.
-- Available [everywhere Rust can compile on Windows](https://doc.rust-lang.org/rustc/platform-support.html), prebuilt are proposed in the release section for Windows, Linux and MacOS
-- Douki is meant to be *safe*. Using Douki you could cancel changes at any time while the program is still runing, errors are human so you should be able to cancel yours.
+- Available [everywhere Rust can compile](https://doc.rust-lang.org/rustc/platform-support.html), prebuilt are proposed in the release section for Windows, Linux and MacOS
+- Douki is meant to be *safe*. Using Douki you could can cancel changes at any time while the program is still runing, errors are human so you should be able to cancel yours.
 
 
 # <a name='Roadmap'></a> Roadmap
@@ -40,5 +39,6 @@ This project is still in its early stage of development —in fact, almost nothi
 * Idea inspired by the late project also named [douki](https://github.com/gilmoreg/douki)
 
 Please take a look at similar projects!
-    * [Taiga](https://taiga.moe) can update your Anilist and Myanimelist while watching anime with their app
-    * [Malsync](https://malsync.moe) can update your Anilist, myanimelist, and others while watching anime on supported website.
+
+* [Taiga](https://taiga.moe) can update your Anilist and myanimelist while watching anime with their app
+* [Malsync](https://malsync.moe) can update your Anilist, myanimelist, and others while watching anime on their supported website.
