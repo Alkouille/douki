@@ -4,11 +4,8 @@ use crate::ani_api::queries::{ListQueryArguments, MediaType::Manga};
 use cynic;
 use cynic::{http::SurfExt, QueryBuilder};
 use std::io;
-use tokio;
 
 #[tokio::main]
-
-/* example */
 async fn main() {
     let mut ani_username = String::new();
 
@@ -18,11 +15,11 @@ async fn main() {
         .expect("Failed to read line");
 
     let query = ani_api::queries::ListQuery::build(ListQueryArguments {
-        name: ani_username,
+        name: String::from(ani_username.trim()),
         list_type: Manga,
     });
 
-    let response = surf::post("https://graphql.anilist.co/")
+    let response = surf::post(ani_api::QL_URL)
         .run_graphql(query)
         .await
         .unwrap()
@@ -35,4 +32,17 @@ async fn main() {
             println!("{}", elem2.unwrap().media_id);
         }
     }
+
+    let (auth_url, _) = ani_api::make_client_url().unwrap();
+
+    println!(
+        "Please browse to: {} and retrieve back the token!",
+        auth_url
+    );
+
+    let mut token = String::new();
+
+    io::stdin()
+        .read_line(&mut token)
+        .expect("Failed to read line");
 }
