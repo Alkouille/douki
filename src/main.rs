@@ -1,8 +1,11 @@
 mod ani_api;
-use crate::ani_api::queries::{ListQueryArguments, MediaType::Manga};
+
+use crate::ani_api::queries::{
+    ListQueryArguments, MediaType::Manga
+};
 
 use cynic;
-use cynic::{http::SurfExt, QueryBuilder};
+use cynic::{http::ReqwestExt, http::SurfExt, QueryBuilder, MutationBuilder};
 use std::io;
 
 #[tokio::main]
@@ -19,7 +22,7 @@ async fn main() {
         list_type: Manga,
     });
 
-    let response = surf::post(ani_api::QL_URL)
+    let response = surf::post(ani_api::info::QL_URL)
         .run_graphql(query)
         .await
         .unwrap()
@@ -33,7 +36,7 @@ async fn main() {
         }
     }
 
-    let (auth_url, _) = ani_api::make_client_url().unwrap();
+    let (auth_url, _) = ani_api::info::CLIENT_URL.as_ref().unwrap();
 
     println!(
         "Please browse to: {} and retrieve back the token!",
@@ -45,4 +48,31 @@ async fn main() {
     io::stdin()
         .read_line(&mut token)
         .expect("Failed to read line");
+
+
+
+    let query = ani_api::queries::Test::build(ani_api::queries::TestArguments {
+        media_id: 30642,
+        status: Some(ani_api::queries::MediaListStatus::Planning),
+    });
+
+
+    let authorization = format!("{}{}", "Bearer ", token.trim());
+
+    let client = reqwest::Client::new();
+    let response = client
+        .post(ani_api::info::QL_URL)
+        .header("Authorization", authorization)
+        .header("Content-Type", "application/json")
+        .header("Accept", "application/json")
+        .run_graphql(query)
+        .await
+        .unwrap()
+        .data
+        .unwrap();
+
+    match response.save_media_list_entry {
+        Some(x) => println!("{}", x.media_id),
+        None => (),
+    };
 }
