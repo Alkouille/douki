@@ -10,7 +10,7 @@
 
 ## <a name='Aboutdoki'></a>About doki
 
-Douki-next (同期『ネクスト』) is a synchronization software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net). The purpose of douki is to help you updating at the same time your anilist and myanimelist with precision.
+Douki-next (同期『ネクスト』) is a synchronization software for [anilist](https://anilist.co) and [myanimelist](https://myanimelist.net). The purpose of douki is to help you keep the same list on both platforms with precision.
 This project is still in its early stage of development —in fact, almost nothing works! So be careful experimenting with this program. Hopefully one day when some release will pop in the github release section, it will definitely be safe though.
 
 ## <a name='Whydoiki'></a> Why doki
@@ -25,9 +25,9 @@ This project is still in its early stage of development —in fact, almost nothi
 - Core
     - [x] Retrieve Anilist's list
     - [ ] Retrieve MAL's list
-    - [ ] Mutate Anilist's list
+    - [x] Mutate Anilist's list 
     - [ ] Mutate MAL's list
-    - [ ] Safe mutate (i.e. possibility to cancel anything while the program is still runing)
+    - [ ] Safe mutate (i.e. possibility to cancel anything while the program is still runing, good CLI)
     - [ ] Choosing field
     - [ ] Mutate only if not already the same
 - Advanced
