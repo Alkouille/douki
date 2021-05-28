@@ -12,7 +12,7 @@ pub enum MediaType {
 #[cynic(
     graphql_type = "Query",
     argument_struct = "ListQueryArguments",
-        schema_path = "schema.graphql",
+    schema_path = "schema.graphql",
     schema_module = "info"
 )]
 pub struct ListQuery {

@@ -1,11 +1,10 @@
 mod ani_api;
+mod myanime_api;
 
-use crate::ani_api::queries::{
-    ListQueryArguments, MediaType::Manga
-};
+use crate::ani_api::queries::{ListQueryArguments, MediaType::Manga};
 
 use cynic;
-use cynic::{http::ReqwestExt, http::SurfExt, QueryBuilder, MutationBuilder};
+use cynic::{http::ReqwestExt, http::SurfExt, MutationBuilder, QueryBuilder};
 use std::io;
 
 #[tokio::main]
@@ -49,17 +48,13 @@ async fn main() {
         .read_line(&mut token)
         .expect("Failed to read line");
 
-
-
     let query = ani_api::queries::Test::build(ani_api::queries::TestArguments {
-        media_id: 30642,
+        media_id: 30642, // id of vinland saga's manga
         status: Some(ani_api::queries::MediaListStatus::Planning),
     });
 
-
     let authorization = format!("{}{}", "Bearer ", token.trim());
 
-    let client = reqwest::Client::new();
     let response = client
         .post(ani_api::info::QL_URL)
         .header("Authorization", authorization)
